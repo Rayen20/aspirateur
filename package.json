@@ -6,9 +6,11 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "js-to-ts-converter": "^0.18.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "utils": "^0.3.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -34,5 +36,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "eslint": "^7.16.0",
+    "jest": "^26.6.0"
   }
 }

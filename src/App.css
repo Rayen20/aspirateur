@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+canvas {
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#btn {
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translate(90%, -50%);
+}
+#dim {
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(9%, -50%);
+}
+#inp{
+  padding-Left: "8px",
+  
+  
+}
+
