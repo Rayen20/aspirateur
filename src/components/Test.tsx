@@ -415,9 +415,9 @@ export default class CanvasComponent extends React.Component<any, any > {
            grille 
            </button>
 
-                 <h2>Position sur X  :  </h2>
+                 <h2>Position sur X  : {(this.state.positionx ) }  </h2>
                  <input  type="number"    onChange={this.myChangeHandlerX}  />
-                 <h2>Position sur Y  : </h2>
+                 <h2>Position sur Y  : {this.state.positiony }</h2>
                  <input type="number"      onChange={this.myChangeHandlery}  />
                 <br></br>
                 <br></br>
