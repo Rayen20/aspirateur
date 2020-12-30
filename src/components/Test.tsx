@@ -31,7 +31,7 @@ export default class CanvasComponent extends React.Component<any, any > {
             initilal: true,
            x: '' ,
            show : true,
-           positionx : '',
+           positionx : 0,
            positiony : 0,
            count: 90,
           
@@ -415,9 +415,9 @@ export default class CanvasComponent extends React.Component<any, any > {
            grille 
            </button>
 
-                 <h2>Position sur X  : {this.state.positionx }</h2>
+                 <h2>Position sur X  :  </h2>
                  <input  type="number"    onChange={this.myChangeHandlerX}  />
-                 <h2>Position sur Y  : {this.state.positiony  }</h2>
+                 <h2>Position sur Y  : </h2>
                  <input type="number"      onChange={this.myChangeHandlery}  />
                 <br></br>
                 <br></br>
@@ -431,11 +431,11 @@ export default class CanvasComponent extends React.Component<any, any > {
            <button   onClick={() =>this.handleClickdr()}>
          Rotation Droite
            </button>
-           <br></br>
+           <p>       </p>
            <button   onClick={() =>this.handleClickdg()}>
            Rotation Gauche
            </button>
-           <br></br>
+           <p>       </p>
            <button   onClick={() =>this.handleClictrans()}>
          Avancer
            </button>
