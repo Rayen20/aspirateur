@@ -24,7 +24,7 @@ export default class CanvasComponent extends React.Component<any, any > {
     public avance : boolean = false;
     constructor(props: {} ) {
         super(props);
-        this.state = {showWarning :true};
+        
 
         this.state = {
            
@@ -34,6 +34,7 @@ export default class CanvasComponent extends React.Component<any, any > {
            positionx : '',
            positiony : 0,
            count: 90,
+          
            ctx :'',
            res: false,
            orientationasp :'Nord'
@@ -186,7 +187,8 @@ export default class CanvasComponent extends React.Component<any, any > {
         this.rotation();
       };
       handleClickdg = () => {
-  
+        const count = this.state.count;
+        this.setState({ count: count - 90 });
         this.rotationG();
         
       };
@@ -248,24 +250,12 @@ export default class CanvasComponent extends React.Component<any, any > {
     var p = this.state.positionx -1;
     var t = this.state.positiony -1
     const pos1 = ctx.rect((size+offset )*(p), (size+offset)*(t), 60, 60)
-    /*const pos11 = ctx.rect((size+offset )*1, (size+offset )*1, 60, 60)
-    const pos2 = ctx.rect((size+offset )*2, (size+offset ), 60, 60)
-    const pos3 = ctx.rect((size+offset )*3, (size+offset), 60, 60)
-    const pos4 = ctx.rect((size+offset )*4, size+offset, 60, 60)
-    const pos5 = ctx.rect((size+offset )*5, size+offset, 60, 60)
-    const pos6 = ctx.rect((size+offset )*6, (size+offset), 60, 60)
-    const pos7 = ctx.rect((size+offset )*7, size+offset, 60, 60)
-    const pos8 = ctx.rect((size+offset )*8, size+offset, 60, 60)
-    const pos9 = ctx.rect((size+offset )*9, (size+offset), 60, 60)
-    const pos10 = ctx.rect((size+offset )*10, (size+offset), 60, 60)
-    //const pos2 = ctx.rect(245, 245, 60, 60)*/
+
     ctx.fill()
-    //this.initilal = false;
-   // const count = this.state.count;
+   
     this.setState({ positionx: p});
     this.setState({ positiony: t});
-      //  this.setState({ count: count + 90 });
-       //this.rotation(ctx); 
+     
 
     }
 }
@@ -286,8 +276,8 @@ export default class CanvasComponent extends React.Component<any, any > {
         const ctx = canvas.getContext('2d')!
       //  ctx.save();
         ctx.translate(((size+offset )*(this.state.positionx ) )+30,(  (size+offset)*(this.state.positiony ))+30);
-        var val = this.state.count
-        var a = 90;
+        var val = this.state.count 
+       // var a = 90;
         //var t = 
         if(val ){
        ctx.rotate(val);// rotation
@@ -333,12 +323,32 @@ export default class CanvasComponent extends React.Component<any, any > {
         const offset = Settings.grid.nodeOffset // <--- CHANGE
     
         const ctx = canvas.getContext('2d')!
-      //  ctx.save();
+      
+      var val = this.state.count 
         ctx.translate(((size+offset )*this.state.positionx )+30,(  (size+offset)*this.state.positiony)+30);
-        ctx.rotate(-90);// rotation
+        if(val ){
+        ctx.rotate(-val);// rotation
         ctx.translate(-(((size+offset )*this.state.positionx )+30),-( (  (size+offset)*this.state.positiony)+30)); 
         ctx.fillStyle = '#4D4E53';
         ctx.fillRect((size+offset )*this.state.positionx, (size+offset)*this.state.positiony, 60, 60)
+        if(this.state.count == -90 ) {
+            this.setState({ orientationasp: "Gauche"  });
+        }
+        
+        if(this.state.count == "-270"){
+            this.setState({ orientationasp: "Droite"  });
+        }
+        if(this.state.count == "0"){
+            this.setState({ orientationasp: "Nord"  });
+        }
+        if(this.state.count == "-360"){
+            this.setState({ orientationasp: "Nord"  });
+        }
+        if(this.state.count == "-180"){
+            this.setState({ orientationasp: "Ouest"  });
+        }
+
+        }
         //ctx.restore();
     }
     trans()  {
@@ -415,7 +425,7 @@ export default class CanvasComponent extends React.Component<any, any > {
          Positionner 
            </button>
 
-                 <h1>orientation {this.state.count - 90}  : {this.state.orientationasp }</h1>
+                 <h1>orientation {this.state.count }  : {this.state.orientationasp }</h1>
                  
              
            <button   onClick={() =>this.handleClickdr()}>
