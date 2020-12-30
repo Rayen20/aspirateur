@@ -425,7 +425,7 @@ export default class CanvasComponent extends React.Component<any, any > {
          Positionner 
            </button>
 
-                 <h1>orientation {this.state.count }  : {this.state.orientationasp }</h1>
+                 <h1>orientation   : {this.state.orientationasp }</h1>
                  
              
            <button   onClick={() =>this.handleClickdr()}>
