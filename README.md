@@ -8,8 +8,8 @@ pour le fonctionnement de projet , il faut avoir le node installé sur pc ,
 pour vérifier le test proposé par vous : 
 
 1- créer une grille de dimension 10 * 
-#### 
 2- choisir le positionnement de x, y ( dans l'exemple x= 5 ,y= 5)
 3- faire toutes les instructions dans l'exemple (DADADADAA) en utilisant le boutton Rotation droite pour pivoter l’aspirateur de 90° à droite 
 et le boutton avancer pour avancer selon l'orientation .
+a chaque fois , quand on pivote l'aspirateur , l'orientation se change soit vers la droite , gauche , nord ou ouest
 4- vous trouverez le résultat final en clicant le boutton Résultat .
