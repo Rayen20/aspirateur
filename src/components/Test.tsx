@@ -16,7 +16,7 @@ export default class CanvasComponent extends React.Component<any, any > {
     public x :  any;
     public show :  any;
     public ctx :  any;
-    public t :  number = 1;
+  
     public positionx :  any;
     public positiony :  any;
     public res :  any;
@@ -42,7 +42,7 @@ export default class CanvasComponent extends React.Component<any, any > {
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handlelick = this.handlelick.bind(this);
         this.handlelickxy = this.handlelickxy.bind(this);
-        this.handlelickD = this.handlelickD.bind(this);
+        
         this._resizeHandler = () => {
             /* Allows CSS to determine size of canvas */
             this.canvas.width = this.canvas.setAttribute('width', '500px');
@@ -72,20 +72,18 @@ export default class CanvasComponent extends React.Component<any, any > {
         
       }
     componentDidMount() {
-        window.addEventListener('resize', this._resizeHandler);
-        this.canvas.width = this.canvas.clientWidth;
-        this.canvas.height = this.canvas.clientHeight;
+  
         //this.rotation();
      
       console.log(this.initilal);
-      console.log(this.isLoggedIn);
+      
       console.log(Settings.grid.dimension);
       console.log(this.x);
       console.log(this.x);
       console.log(this.myChangeb);
       console.log(this.state.show);
         this.clearAndDraw();
-        this.dim(this.x)
+       
         this.DirtyDraw();
        
        
@@ -113,7 +111,7 @@ export default class CanvasComponent extends React.Component<any, any > {
          
         }
     }
-    dim(x : number) {
+    /*dim(x : number) {
         
         
         
@@ -121,7 +119,7 @@ export default class CanvasComponent extends React.Component<any, any > {
         console.log( Settings.grid.dimension)
        
         
-    }
+    }*/
     private DirtyDraw(): void {
         // ... //
 
@@ -169,9 +167,9 @@ export default class CanvasComponent extends React.Component<any, any > {
         
       }
       handlelick(){
-          this.dim(this.x)
+          //this.dim(this.x)
           this.DirtyDraw()
-          console.log(this.dim(this.x))
+          //console.log(this.dim(this.x))
          
       }
       handlelickxy(){
@@ -181,18 +179,13 @@ export default class CanvasComponent extends React.Component<any, any > {
         
        
     }
-    handlelickD(){
-      
-      
-        //console.log(this.dim(this.x))
-       
-    }
-    handleClickdd = () => {
+   
+    handleClickdr = () => {
         const count = this.state.count;
         this.setState({ count: count + 90 });
         this.rotation();
       };
-      handleClickddd = () => {
+      handleClickdg = () => {
   
         this.rotationG();
         
@@ -425,11 +418,11 @@ export default class CanvasComponent extends React.Component<any, any > {
                  <h1>orientation {this.state.count - 90}  : {this.state.orientationasp }</h1>
                  
              
-           <button   onClick={() =>this.handleClickdd()}>
+           <button   onClick={() =>this.handleClickdr()}>
          Rotation Droite
            </button>
            <br></br>
-           <button   onClick={() =>this.handleClickddd()}>
+           <button   onClick={() =>this.handleClickdg()}>
            Rotation Gauche
            </button>
            <br></br>
